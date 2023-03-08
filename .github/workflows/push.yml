@@ -27,10 +27,13 @@ jobs:
           node-version: 16.x
       # Run npm install and build on our code
       - run: npm install
-      - run: npm run build --if-present
+      # - run: npm i jest
       # Run Test
       - name: Run tests
-        run: npm run test
+        run: npm run jest-test
+      # Build on our code
+      - run: npm run build --if-present
+
       # Deploy to Netlify using our production secrets
       - name: Deploy to netlify
         uses: netlify/actions/cli@master
